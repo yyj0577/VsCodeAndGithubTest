@@ -2,8 +2,6 @@
 #include "awap.cpp"
 using namespace std;
 
-
-
 int main()
 {
     int val1=32;
