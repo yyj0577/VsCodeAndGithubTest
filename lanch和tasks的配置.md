@@ -1,26 +1,37 @@
-launch.json
+$
+\sum_{i=1}^{n}i=\frac{n(n+1)}{2}
+$
+
+
+$\big[launch.json]$
+
 
 {
-    &quot;version&quot;: &quot;0.2.0&quot;,
-    &quot;configurations&quot;: [
+    "version": "0.2.0",
+    "configurations": [
         {//这个大括号里是我们的‘调试(Debug)’配置
-            &quot;name&quot;: &quot;Debug&quot;, // 配置名称
-            &quot;type&quot;: &quot;cppdbg&quot;, // 配置类型，cppdbg对应cpptools提供的调试功能；可以认为此处只能是cppdbg
-            &quot;request&quot;: &quot;launch&quot;, // 请求配置类型，可以为launch（启动）或attach（附加）
-            &quot;program&quot;: &quot;${fileDirname}\\bin\\${fileBasenameNoExtension}.exe&quot;, // 将要进行调试的程序的路径
-            &quot;args&quot;: [], // 程序调试时传递给程序的命令行参数，这里设为空即可
-            &quot;stopAtEntry&quot;: false, // 设为true时程序将暂停在程序入口处，相当于在main上打断点
-            &quot;cwd&quot;: &quot;${fileDirname}&quot;, // 调试程序时的工作目录，此处为源码文件所在目录
-            &quot;environment&quot;: [], // 环境变量，这里设为空即可
-            &quot;externalConsole&quot;: false, // 为true时使用单独的cmd窗口，跳出小黑框；设为false则是用vscode的内置终端，建议用内置终端
-            &quot;internalConsoleOptions&quot;: &quot;neverOpen&quot;, // 如果不设为neverOpen，调试时会跳到“调试控制台”选项卡，新手调试用不到
-            &quot;MIMode&quot;: &quot;gdb&quot;, // 指定连接的调试器，gdb是minGW中的调试程序
-            &quot;miDebuggerPath&quot;: &quot;C:\\Program Files\\mingw64\\bin\\gdb.exe&quot;, // 指定调试器所在路径，如果你的minGW装在别的地方，则要改成你自己的路径，注意间隔是\\
-            &quot;preLaunchTask&quot;: &quot;build&quot; // 调试开始前执行的任务，我们在调试前要编译构建。与tasks.json的label相对应，名字要一样
-    }]
-}
+            "name": "Debug", // 配置名称
+            "type": "cppdbg", // 配置类型，cppdbg对应cpptools提供的调试功能；可以认为此处只能是cppdbg
+            "request": "launch", // 请求配置类型，可以为launch（启动）或attach（附加）
+            "program": "${fileDirname}\\bin\\${fileBasenameNoExtension}.exe", // 将要进行调试的程序的路径
+            "args": [], // 程序调试时传递给程序的命令行参数，这里设为空即可
+            "stopAtEntry": false, // 设为true时程序将暂停在程序入口处，相当于在main上打断点
+            "cwd": "${fileDirname}", // 调试程序时的工作目录，此处为源码文件所在目录
+            "environment": [], // 环境变量，这里设为空即可
+            "externalConsole": false, // 为true时使用单独的cmd窗口，跳出小黑框；设为false则是用vscode的内置终端，建议用内置终端
+            "internalConsoleOptions": "neverOpen", // 如果不设为neverOpen，调试时会跳到“调试控制台”选项卡，新手调试用不到
+            "MIMode": "gdb", // 指定连接的调试器，gdb是minGW中的调试程序
+            "miDebuggerPath": "C:\\Program Files\\mingw64\\bin\\gdb.exe", // 指定调试器所在路径，如果你的minGW装在别的地方，则要改成你自己的路径，注意间隔是\\
+            "preLaunchTask": "build" // 调试开始前执行的任务，我们在调试前要编译构建。与tasks.json的label相对应，名字要一样
+
+        }
+    ]
+},
 
 tasks.json
+
+
+
 {
     &quot;version&quot;: &quot;2.0.0&quot;,
     &quot;tasks&quot;: [
